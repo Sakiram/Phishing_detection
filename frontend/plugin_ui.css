@@ -4,13 +4,13 @@ html {
 body {
     padding: 0px;
     margin: 0px;
-    background: #fff;
+    background: #eaf3db;
     height: 350px;
 }
 #plugin_name {
     width: 330px;
     margin: 0 0;
-    background-color: #195975;
+    background-color: #556B2F;
 }
 h2 {
     margin-top: 20px;
@@ -21,7 +21,7 @@ h2 {
 }
 h1 {
     font-family: 'Russo One', sans-serif;
-    color: white;
+    color: #fff;
     font-size: 25px;
     padding: 10px;
     text-align: center;

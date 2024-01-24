@@ -12,6 +12,11 @@ import numpy as np
 import json
 import dump
 
+# Gradient Boosting Classifier Model
+from sklearn.ensemble import GradientBoostingClassifier
+
+# instantiate the model
+gbc = GradientBoostingClassifier(max_depth=4,learning_rate=0.7)
 
 # In[2]:
 
@@ -33,7 +38,6 @@ print('Cross Validation Score: {0}'.format(np.mean(cross_val_score(clf, X_train,
 
 clf.fit(X_train, y_train)
 
-
 # In[5]:
 
 
@@ -53,4 +57,7 @@ print('Accuracy: {}'.format(accuracy_score(y_test, pred)))
 
 #print(forest_to_json(clf))
 json.dump(dump.forest_to_json(clf), open('../../static/classifier.json', 'w'))
+
+
+
 

@@ -72,4 +72,21 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   results[sender.tab.id]=request;
   classify(sender.tab.id, request);
   sendResponse({received: "result"});
+
 });
+
+
+
+// chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+//   // Check if the message contains a "redirect" action
+//   if (request.action === "redirect") {
+//       // Get the current tab
+//       chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+//           // Check if there is an active tab
+//           if (tabs && tabs.length > 0) {
+//               // Update the URL of the current tab
+//               chrome.tabs.update(tabs[0].id, { url: request.redirectUrl });
+//           }
+//       });
+//   }
+// });

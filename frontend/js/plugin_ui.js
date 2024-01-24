@@ -30,3 +30,25 @@ chrome.tabs.query({ currentWindow: true, active: true }, function(tabs){
     
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('redirectButton').addEventListener('click', function () {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        if (tabs && tabs.length > 0) {
+          // Send a message to the content script to initiate the redirect
+          chrome.tabs.sendMessage(tabs[0].id, { action: 'redirect', redirectUrl: 'https://www.youtube.com/results?search_query=how+an+extension+works+in+google' });
+        }
+      });
+    });
+  });
+  
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Add a click event listener to the button
+//     document.getElementById('redirectButton').addEventListener('click', function () {
+//       // Send a message to the background script to initiate the redirect
+//       chrome.runtime.sendMessage({ action: 'redirect', redirectUrl: 'https://www.youtube.com/' });
+//     });
+//   });
+
+// chrome.runtime.sendMessage({ action: "redirect", redirectUrl: "https://www.youtube.com/" });
+
